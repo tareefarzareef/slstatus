@@ -12,9 +12,6 @@ static const char unknown_str[] = "n/a";
 /*
  * function            description                     argument (example)
  *
- * backlight_perc      backlight percentage            device name
- *                                                     (intel_backlight)
- *                                                     NULL on OpenBSD
  * battery_perc        battery percentage              battery name (BAT0)
  *                                                     NULL on OpenBSD/FreeBSD
  * battery_remaining   battery remaining HH:MM         battery name (BAT0)
@@ -68,9 +65,9 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ backlight_perc, "☀️:%s",           "intel_backlight" },
+	{ backlight_perc, "☀️:%s",           "wlo1" },
 	{ wifi_essid, "|📡:%s",           "wlo1" },
-	{ ram_perc, "|💽:%s%%",           NULL },
+	{ ram_free, "|💽:%s%%",           NULL },
   { run_command, "|🔊:%s",        "pamixer --get-volume-human"},
 	{ battery_perc, "|🔋:%s%%",           "BAT1" },
 	{ datetime, "|🕒:%s",           "%T %a %D" },
